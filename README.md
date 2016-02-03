@@ -25,23 +25,43 @@ npm install 				//install packages
 
 ## Setup
 
-Create the following directory structure in your theme or project root
+Copy the `src` directory into your theme or project root
 
 ```
 - src
-	- js
+	- js 
 		- main.js
+		- parts
 	- scss
+		- includes
+		- parts		
+		- vendor
 	
 - gulpfile.js
 - package.json
 - webpack.config.js
 ```
 
+**Summary**
 
-`src/js/main.js` - The Entry point for Webpack.  This can be configured in the `webpack.config.js`
+`src/js/main.js` The Entry point for Webpack.  This can be configured in the `webpack.config.js`
 
-`src/scss` - where SASS Files are stored. If you dont like the path, look in the `gulpfile.js`
+`src/js/parts` Sample include directory. 
+
+
+`src/scss` Where SASS Files are stored. 
+
+- `includes` Contains generic SASS partials for use in your site  
+
+  - Fonts
+  -  Mixins
+  -  Variables
+- `/parts` Page Layout Elements  
+  - Header
+  - Footer
+- `vendor` Store anything libs `Neat`, `Bourbon`, in here
+
+The `src/main.scss` file includes partials that are named the same as the directories they are in (`includes/includes`,`parts/parts`, `vendor/vendor`). If you add any Include, Parts, or Vendor stuff, be sure to update the main Partial to include it.
 
 `gulpfile.js` - Gulpfile
 
