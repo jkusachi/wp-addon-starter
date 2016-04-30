@@ -23,3 +23,12 @@ npm install 				//install packages
 ```
 
 
+Add the following to your `functions.php`
+
+```
+//CSS
+wp_enqueue_style( 'yourtheme-style', get_template_directory_uri() . '/dist/css/main.css' );
+
+//JS
+wp_enqueue_script( 'yourtheme-bundlejs', get_template_directory_uri() . '/dist/js/bundle.js', array('jquery'), '0', true );
+```
